@@ -14,6 +14,28 @@ const Header = () => {
     { name: 'Contact', href: '#contact' },
   ];
 
+  const handleNavClick = (href: string) => {
+    const element = document.querySelector(href);
+    if (element) {
+      element.scrollIntoView({ 
+        behavior: 'smooth',
+        block: 'start'
+      });
+    }
+    setIsMenuOpen(false); // Close mobile menu after navigation
+  };
+
+  const handleBookSession = () => {
+    const contactElement = document.querySelector('#contact');
+    if (contactElement) {
+      contactElement.scrollIntoView({ 
+        behavior: 'smooth',
+        block: 'start'
+      });
+    }
+    setIsMenuOpen(false);
+  };
+
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border">
       <div className="container mx-auto px-4 py-4">
@@ -32,19 +54,22 @@ const Header = () => {
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
             {navItems.map((item) => (
-              <a
+              <button
                 key={item.name}
-                href={item.href}
-                className="text-foreground hover:text-primary transition-colors duration-200 font-medium"
+                onClick={() => handleNavClick(item.href)}
+                className="text-foreground hover:text-primary transition-colors duration-200 font-medium cursor-pointer"
               >
                 {item.name}
-              </a>
+              </button>
             ))}
           </nav>
 
           {/* CTA Button */}
           <div className="hidden md:block">
-            <Button className="bg-primary hover:bg-primary/90 text-primary-foreground">
+            <Button 
+              onClick={handleBookSession}
+              className="bg-primary hover:bg-primary/90 text-primary-foreground"
+            >
               Book Session
             </Button>
           </div>
@@ -63,16 +88,18 @@ const Header = () => {
           <div className="md:hidden mt-4 pb-4 border-t border-border pt-4">
             <nav className="flex flex-col space-y-4">
               {navItems.map((item) => (
-                <a
+                <button
                   key={item.name}
-                  href={item.href}
-                  className="text-foreground hover:text-primary transition-colors duration-200 font-medium"
-                  onClick={() => setIsMenuOpen(false)}
+                  onClick={() => handleNavClick(item.href)}
+                  className="text-foreground hover:text-primary transition-colors duration-200 font-medium text-left"
                 >
                   {item.name}
-                </a>
+                </button>
               ))}
-              <Button className="bg-primary hover:bg-primary/90 text-primary-foreground w-full mt-4">
+              <Button 
+                onClick={handleBookSession}
+                className="bg-primary hover:bg-primary/90 text-primary-foreground w-full mt-4"
+              >
                 Book Session
               </Button>
             </nav>

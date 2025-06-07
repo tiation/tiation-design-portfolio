@@ -4,6 +4,26 @@ import { ArrowRight, Heart, Leaf, Sun } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 const HeroSection = () => {
+  const handleStartJourney = () => {
+    const servicesElement = document.querySelector('#services');
+    if (servicesElement) {
+      servicesElement.scrollIntoView({ 
+        behavior: 'smooth',
+        block: 'start'
+      });
+    }
+  };
+
+  const handleLearnMore = () => {
+    const aboutElement = document.querySelector('#about');
+    if (aboutElement) {
+      aboutElement.scrollIntoView({ 
+        behavior: 'smooth',
+        block: 'start'
+      });
+    }
+  };
+
   return (
     <section id="home" className="min-h-screen flex items-center relative overflow-hidden">
       {/* Background Pattern - Now 80% transparent */}
@@ -25,11 +45,20 @@ const HeroSection = () => {
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-              <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground group w-full sm:w-auto">
+              <Button 
+                size="lg" 
+                onClick={handleStartJourney}
+                className="bg-primary hover:bg-primary/90 text-primary-foreground group w-full sm:w-auto"
+              >
                 Start Your Journey
                 <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </Button>
-              <Button variant="outline" size="lg" className="border-primary text-primary hover:bg-accent w-full sm:w-auto">
+              <Button 
+                variant="outline" 
+                size="lg" 
+                onClick={handleLearnMore}
+                className="border-primary text-primary hover:bg-accent w-full sm:w-auto"
+              >
                 Learn More
               </Button>
             </div>

@@ -3,6 +3,16 @@ import React from 'react';
 import { Sparkles, Heart, Mail, Phone, MapPin } from 'lucide-react';
 
 const Footer = () => {
+  const handleNavClick = (href: string) => {
+    const element = document.querySelector(href);
+    if (element) {
+      element.scrollIntoView({ 
+        behavior: 'smooth',
+        block: 'start'
+      });
+    }
+  };
+
   return (
     <footer className="bg-warm-white border-t border-border relative">
       <div className="absolute inset-0 leopard-pattern-subtle opacity-5"></div>
@@ -29,10 +39,30 @@ const Footer = () => {
           <div className="space-y-4">
             <h4 className="font-playfair font-semibold text-foreground">Quick Links</h4>
             <nav className="flex flex-col space-y-2">
-              <a href="#home" className="text-muted-foreground hover:text-primary transition-colors">Home</a>
-              <a href="#about" className="text-muted-foreground hover:text-primary transition-colors">About</a>
-              <a href="#services" className="text-muted-foreground hover:text-primary transition-colors">Services</a>
-              <a href="#wellness" className="text-muted-foreground hover:text-primary transition-colors">Wellness</a>
+              <button 
+                onClick={() => handleNavClick('#home')}
+                className="text-muted-foreground hover:text-primary transition-colors text-left"
+              >
+                Home
+              </button>
+              <button 
+                onClick={() => handleNavClick('#about')}
+                className="text-muted-foreground hover:text-primary transition-colors text-left"
+              >
+                About
+              </button>
+              <button 
+                onClick={() => handleNavClick('#services')}
+                className="text-muted-foreground hover:text-primary transition-colors text-left"
+              >
+                Services
+              </button>
+              <button 
+                onClick={() => handleNavClick('#wellness')}
+                className="text-muted-foreground hover:text-primary transition-colors text-left"
+              >
+                Wellness
+              </button>
             </nav>
           </div>
 
@@ -53,11 +83,21 @@ const Footer = () => {
             <div className="space-y-3">
               <div className="flex items-center space-x-3">
                 <Mail className="w-4 h-4 text-primary" />
-                <span className="text-muted-foreground text-sm">hello@mupan.wellness</span>
+                <a 
+                  href="mailto:hello@mupan.wellness"
+                  className="text-muted-foreground text-sm hover:text-primary transition-colors"
+                >
+                  hello@mupan.wellness
+                </a>
               </div>
               <div className="flex items-center space-x-3">
                 <Phone className="w-4 h-4 text-primary" />
-                <span className="text-muted-foreground text-sm">+1 (555) 123-4567</span>
+                <a 
+                  href="tel:+15551234567"
+                  className="text-muted-foreground text-sm hover:text-primary transition-colors"
+                >
+                  +1 (555) 123-4567
+                </a>
               </div>
               <div className="flex items-center space-x-3">
                 <MapPin className="w-4 h-4 text-primary" />
