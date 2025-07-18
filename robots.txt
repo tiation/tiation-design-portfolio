@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://tiation.github.io/perth-white-glove-magic/sitemap.xml
