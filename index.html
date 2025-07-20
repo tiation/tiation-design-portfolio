@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tiation Design Portfolio - Showcasing Design Excellence</title>
+    <meta name="description" content="Explore our diverse portfolio of web design projects across healthcare, premium services, AI, entertainment, and more. Modern, responsive designs built with cutting-edge technology.">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://portfolio.tiation.com/">
+    <meta property="og:title" content="Tiation Design Portfolio - Showcasing Design Excellence">
+    <meta property="og:description" content="Explore our diverse portfolio of web design projects across multiple industries.">
+    <meta property="og:image" content="https://portfolio.tiation.com/og-image.jpg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://portfolio.tiation.com/">
+    <meta property="twitter:title" content="Tiation Design Portfolio">
+    <meta property="twitter:description" content="Explore our diverse portfolio of web design projects across multiple industries.">
+    <meta property="twitter:image" content="https://portfolio.tiation.com/og-image.jpg">
+
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎨</text></svg>">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #6366f1;
+            --secondary-color: #8b5cf6;
+            --accent-color: #06b6d4;
+            --bg-primary: #0f172a;
+            --bg-secondary: #1e293b;
+            --text-primary: #f8fafc;
+            --text-secondary: #cbd5e1;
+            --border-color: #334155;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        header {
+            padding: 2rem 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .header-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        .logo {
+            font-size: 2rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero {
+            padding: 4rem 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color), var(--accent-color));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto 2rem;
+        }
+
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .project-card {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: 1rem;
+            padding: 2rem;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .project-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color), var(--accent-color));
+        }
+
+        .project-card:hover {
+            transform: translateY(-4px);
+            border-color: var(--primary-color);
+            box-shadow: 0 20px 40px rgba(99, 102, 241, 0.1);
+        }
+
+        .project-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 1rem;
+        }
+
+        .project-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        .project-industry {
+            background: rgba(99, 102, 241, 0.1);
+            color: var(--primary-color);
+            padding: 0.25rem 0.75rem;
+            border-radius: 0.5rem;
+            font-size: 0.875rem;
+            font-weight: 500;
+        }
+
+        .project-description {
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+        }
+
+        .project-tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .tech-tag {
+            background: rgba(139, 92, 246, 0.1);
+            color: var(--secondary-color);
+            padding: 0.25rem 0.5rem;
+            border-radius: 0.25rem;
+            font-size: 0.75rem;
+            font-weight: 500;
+        }
+
+        .project-actions {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            padding: 0.5rem 1rem;
+            border-radius: 0.5rem;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary {
+            background: var(--primary-color);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #5856eb;
+        }
+
+        .btn-outline {
+            border: 1px solid var(--border-color);
+            color: var(--text-secondary);
+        }
+
+        .btn-outline:hover {
+            border-color: var(--primary-color);
+            color: var(--primary-color);
+        }
+
+        footer {
+            padding: 3rem 0;
+            border-top: 1px solid var(--border-color);
+            margin-top: 4rem;
+            text-align: center;
+        }
+
+        .footer-content {
+            color: var(--text-secondary);
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .portfolio-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .container {
+                padding: 0 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">🎨 Tiation Design</div>
+                <nav>
+                    <a href="#portfolio" style="color: var(--text-secondary); text-decoration: none; margin: 0 1rem;">Portfolio</a>
+                    <a href="#contact" style="color: var(--text-secondary); text-decoration: none; margin: 0 1rem;">Contact</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <h1>Design Portfolio</h1>
+                <p>Showcasing versatile design capabilities across diverse industries with modern technologies and user-centered approaches</p>
+            </div>
+        </section>
+
+        <section id="portfolio" class="container">
+            <div class="portfolio-grid">
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3 class="project-title">Wellness Hub</h3>
+                        <span class="project-industry">Healthcare</span>
+                    </div>
+                    <p class="project-description">
+                        A mindful wellness platform featuring calming design elements, meditation guides, and health tracking capabilities. Built with accessibility and user comfort in mind.
+                    </p>
+                    <div class="project-tech">
+                        <span class="tech-tag">React</span>
+                        <span class="tech-tag">TypeScript</span>
+                        <span class="tech-tag">Tailwind CSS</span>
+                        <span class="tech-tag">Shadcn/UI</span>
+                    </div>
+                    <div class="project-actions">
+                        <a href="#" class="btn btn-primary">View Demo</a>
+                        <a href="./wellness-hub/" class="btn btn-outline">Source</a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3 class="project-title">White Glove Magic</h3>
+                        <span class="project-industry">Premium Services</span>
+                    </div>
+                    <p class="project-description">
+                        Elegant and luxurious service platform with sophisticated design elements, premium photography integration, and high-end user experience design.
+                    </p>
+                    <div class="project-tech">
+                        <span class="tech-tag">Next.js</span>
+                        <span class="tech-tag">SCSS</span>
+                        <span class="tech-tag">Framer Motion</span>
+                    </div>
+                    <div class="project-actions">
+                        <a href="#" class="btn btn-primary">View Demo</a>
+                        <a href="./white-glove-magic/" class="btn btn-outline">Source</a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3 class="project-title">Photo Flare Studio</h3>
+                        <span class="project-industry">Photography</span>
+                    </div>
+                    <p class="project-description">
+                        Creative and dynamic photography portfolio with advanced gallery features, booking system, and client management tools.
+                    </p>
+                    <div class="project-tech">
+                        <span class="tech-tag">Vue.js</span>
+                        <span class="tech-tag">CSS3</span>
+                        <span class="tech-tag">Animations</span>
+                    </div>
+                    <div class="project-actions">
+                        <a href="#" class="btn btn-primary">View Demo</a>
+                        <a href="./photo-flare-site/" class="btn btn-outline">Source</a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3 class="project-title">Home Safety Matrix AI</h3>
+                        <span class="project-industry">AI/Security</span>
+                    </div>
+                    <p class="project-description">
+                        Professional AI-powered home security platform with real-time monitoring, threat detection, and intelligent alerts system.
+                    </p>
+                    <div class="project-tech">
+                        <span class="tech-tag">React</span>
+                        <span class="tech-tag">AI Integration</span>
+                        <span class="tech-tag">WebRTC</span>
+                    </div>
+                    <div class="project-actions">
+                        <a href="#" class="btn btn-primary">View Demo</a>
+                        <a href="./home-safety-ai/" class="btn btn-outline">Source</a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3 class="project-title">Markers Web Platform</h3>
+                        <span class="project-industry">Business Tools</span>
+                    </div>
+                    <p class="project-description">
+                        Clean and functional business tool platform with project management features, team collaboration, and productivity tracking.
+                    </p>
+                    <div class="project-tech">
+                        <span class="tech-tag">TypeScript</span>
+                        <span class="tech-tag">Modern UI</span>
+                        <span class="tech-tag">Charts.js</span>
+                    </div>
+                    <div class="project-actions">
+                        <a href="#" class="btn btn-primary">View Demo</a>
+                        <a href="./markers-web/" class="btn btn-outline">Source</a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3 class="project-title">Shattered Realms Nexus</h3>
+                        <span class="project-industry">Gaming</span>
+                    </div>
+                    <p class="project-description">
+                        Dark and immersive gaming platform with fantasy themes, character management, and community features for RPG enthusiasts.
+                    </p>
+                    <div class="project-tech">
+                        <span class="tech-tag">React</span>
+                        <span class="tech-tag">Gaming UI</span>
+                        <span class="tech-tag">WebGL</span>
+                    </div>
+                    <div class="project-actions">
+                        <a href="#" class="btn btn-primary">View Demo</a>
+                        <a href="./shattered-realms/" class="btn btn-outline">Source</a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3 class="project-title">Secure VPN Web</h3>
+                        <span class="project-industry">Technology</span>
+                    </div>
+                    <p class="project-description">
+                        Professional and secure VPN service platform with server management, connection monitoring, and privacy-focused design.
+                    </p>
+                    <div class="project-tech">
+                        <span class="tech-tag">Modern Web Stack</span>
+                        <span class="tech-tag">Security</span>
+                        <span class="tech-tag">Encryption</span>
+                    </div>
+                    <div class="project-actions">
+                        <a href="#" class="btn btn-primary">View Demo</a>
+                        <a href="./secure-vpn/" class="btn btn-outline">Source</a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3 class="project-title">Podcast Chaos Platform</h3>
+                        <span class="project-industry">Entertainment</span>
+                    </div>
+                    <p class="project-description">
+                        Bold and energetic podcast platform with audio integration, episode management, and community engagement features.
+                    </p>
+                    <div class="project-tech">
+                        <span class="tech-tag">React</span>
+                        <span class="tech-tag">Audio Integration</span>
+                        <span class="tech-tag">RSS Feeds</span>
+                    </div>
+                    <div class="project-actions">
+                        <a href="#" class="btn btn-primary">View Demo</a>
+                        <a href="./podcast-chaos/" class="btn btn-outline">Source</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-content">
+                <p>Ready to discuss your next design project?</p>
+                <p>Contact us at <a href="mailto:design@tiation.com" style="color: var(--primary-color);">design@tiation.com</a></p>
+                <p style="margin-top: 1rem; opacity: 0.7;">© 2025 Tiation. Crafted with ❤️ by the Tiation Design Team</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
